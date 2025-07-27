@@ -19,9 +19,12 @@ bool Core::GameWindowManager::IsGameRunning() const
 
 void Core::GameWindowManager::Render()
 {
+	GameWindow->clear(sf::Color(200, 50, 50, 255));
+
+	GameWindow->display();
 }
 
 void Core::GameWindowManager::CreateGameWindow()
 {
-	GameWindow->create(VideoMode(GameWindowWidth, GameWindowHeight), GameWindowTitle, Style::Default);
+	GameWindow->create(VideoMode::getDesktopMode(), GameWindowTitle, Style::Default);
 }
